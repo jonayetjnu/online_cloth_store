@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="background-color: mediumseagreen">
+        <h:form enctype="multipart/form-data" style="background-color:lightblue">
+            
+            <p:panelGrid columns="2">
+                <p:messages id="msg" closable="true"  showDetail="true"></p:messages>
+<!--                <h:outputLabel value=" Select Category Name"></h:outputLabel>   
+                <p:selectOneMenu value="#{productMB.catname}">
+                    <f:selectItem itemLabel="Select Category Name" itemValue=""/>
+                    <f:selectItems value="#{subCategoryMB.categoryName}"/>
+                    <p:ajax update="scat"/>
+                    
+                </p:selectOneMenu>
+                <h:outputLabel value="Select Sub Category Name"></h:outputLabel>
+                <p:selectOneMenu value="#{productMB.subcatname}" id="scat">
+                
+                    <f:selectItem itemLabel="Select Sub Category Name" itemValue=""/>
+                    <f:selectItems value="#{productMB.subCategoryName}"/>
+                </p:selectOneMenu>-->
+                 <h:outputLabel value=" Product ID"></h:outputLabel>   
+                 <h:inputText value="#{productMB.product.proId}"></h:inputText>
+                
+                <h:outputLabel value=" Product Name"></h:outputLabel>   
+                <h:inputText value="#{productMB.product.proName}"></h:inputText>
+                
+                  <h:outputLabel value=" Product Quantity"></h:outputLabel>   
+                  <h:inputText value="#{productMB.product.proQty}"></h:inputText>
+                  
+                    <h:outputLabel value=" Product Price"></h:outputLabel>   
+                    <h:inputText value="#{productMB.product.proPrice}"></h:inputText>
+                    
+                    <h:outputLabel value=" Select Image"></h:outputLabel>   
+                    <p:fileUpload value="#{productMB.file}" mode="simple"/>
+                
+                   
+                  <h:outputLabel value=" Product Description"></h:outputLabel>   
+                  <h:inputText value="#{productMB.product.proDesc}"></h:inputText>
+                  
+                  <p:commandButton action="#{productMB.updateProduct()}" value="update" update="msg" ajax="false"></p:commandButton>
+ 
+            </p:panelGrid> 
+            <h3><h:link outcome="viewProduct" value="Show Table"></h:link> </h3>
+        </h:form>
+    </h:body>
+</html>

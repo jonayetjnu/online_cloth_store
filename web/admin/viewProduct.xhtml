@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+        <h:form>
+           
+            
+            <p:dataTable var="row" value="#{productMB.allProduct}">
+                <p:column headerText="Product ID">
+                    #{row.proId}
+                </p:column>
+            
+                <p:column headerText="Product name">
+                    #{row.proName}
+                </p:column>
+           
+               <p:column headerText="Product Price">
+                    #{row.proPrice}
+                </p:column>
+            
+                <p:column headerText="product Quantity">
+                    #{row.proQty}
+                </p:column>
+                
+                 <p:column headerText="Product Url">
+                    #{row.proUrl}
+                </p:column>
+                
+                 <p:column headerText="Product Describtion">
+                    #{row.proDesc}
+                </p:column>
+                
+               
+                <p:column headerText="Action">
+                    <p:commandLink value="Edit" action="editProduct2" actionListener="#{productMB.editProduct()}">
+                        <f:param name="proId" value="#{row.proId}"/>
+                    </p:commandLink>
+                  
+                    <p:outputLabel value=" "/>
+                    <p:outputLabel value=" "/>
+                    
+                    <p:commandLink value="Delete" action="deleteProduct" actionListener="#{productMB.deleteProduct()}">
+                            <f:param name="proId" value="#{row.proId}"/>
+                    </p:commandLink>
+                    
+                    
+                </p:column>
+            
+            </p:dataTable>
+            
+          
+            
+        </h:form>
+<!--         <a href="addproduct.xhtml">Add Product</a>-->
+<h3><h:link outcome="addproduct" value="Insert Page"></h:link> </h3> 
+        </f:view> 
+    </h:body>
+</html>
+
+

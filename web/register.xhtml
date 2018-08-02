@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="./resources/loginpage.xhtml">
+        <ui:define name="title">Customer :: Register</ui:define>
+        <ui:define name="content">
+            <br/><br/>
+
+            <div class="bgwhite" id="users">
+                <div class="asideTitle">Register a new account</div>
+
+
+                <h:form>
+                    <p:messages id="msg" closable="true" autoUpdate="true"></p:messages>
+                    <p:panelGrid columns="2">
+                        <h:outputLabel>User Name</h:outputLabel>
+                        <h:inputText value="#{usersMb.users.UUsername}" required="true" requiredMessage="User Name required"/>
+
+                        <h:outputLabel>User Full Name</h:outputLabel>
+                        <h:inputText value="#{usersMb.users.UFullname}" required="true" requiredMessage="User Full Name required"/>
+
+                        <h:outputLabel>User Email</h:outputLabel>
+                        <h:inputText value="#{usersMb.users.UEmail}" required="true" requiredMessage="User Email required"/>
+
+                        <h:outputLabel>User Password</h:outputLabel>
+                        <h:inputSecret value="#{usersMb.users.UPass}" required="true" requiredMessage="User Password required"/>
+
+                        <h:outputText></h:outputText>
+                        <p:commandButton action="#{usersMb.addUsers()}" value="Register" update="msg"/>
+                    </p:panelGrid>
+                </h:form>              
+
+            </div>
+            <br /><br /><br />
+
+        </ui:define>
+
+    </ui:composition> 
+</html>
+
+
+
+
+
